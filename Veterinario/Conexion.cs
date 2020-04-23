@@ -64,7 +64,7 @@ namespace Veterinario
                 return "F";
             }
         }
-        public String clienteNuevo(string DNI, string Nombre, string Telefono)//no funciona
+        public String clienteNuevo(string DNI, string Nombre, string Telefono)//funciona
         {
             try
             {

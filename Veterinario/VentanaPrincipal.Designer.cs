@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.CLIN = new System.Windows.Forms.Button();
             this.textedad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textraza = new System.Windows.Forms.TextBox();
             this.textnombre2 = new System.Windows.Forms.TextBox();
             this.textdueño = new System.Windows.Forms.TextBox();
-            this.texttele = new System.Windows.Forms.TextBox();
+            this.texttelefono = new System.Windows.Forms.TextBox();
             this.textnombre = new System.Windows.Forms.TextBox();
             this.textdni = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.CLIN = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -53,12 +53,13 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.DarkSeaGreen;
+            this.tabPage1.Controls.Add(this.CLIN);
             this.tabPage1.Controls.Add(this.textedad);
             this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.textraza);
             this.tabPage1.Controls.Add(this.textnombre2);
             this.tabPage1.Controls.Add(this.textdueño);
-            this.tabPage1.Controls.Add(this.texttele);
+            this.tabPage1.Controls.Add(this.texttelefono);
             this.tabPage1.Controls.Add(this.textnombre);
             this.tabPage1.Controls.Add(this.textdni);
             this.tabPage1.Controls.Add(this.label4);
@@ -66,7 +67,6 @@
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label6);
             this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.CLIN);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -75,6 +75,17 @@
             this.tabPage1.Size = new System.Drawing.Size(792, 424);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "tabPage1";
+            // 
+            // CLIN
+            // 
+            this.CLIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CLIN.Location = new System.Drawing.Point(47, 130);
+            this.CLIN.Name = "CLIN";
+            this.CLIN.Size = new System.Drawing.Size(150, 35);
+            this.CLIN.TabIndex = 42;
+            this.CLIN.Text = "Nuevo cliente";
+            this.CLIN.UseVisualStyleBackColor = true;
+            this.CLIN.Click += new System.EventHandler(this.CLIN_Click_1);
             // 
             // textedad
             // 
@@ -119,13 +130,13 @@
             this.textdueño.Size = new System.Drawing.Size(100, 26);
             this.textdueño.TabIndex = 34;
             // 
-            // texttele
+            // texttelefono
             // 
-            this.texttele.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.texttele.Location = new System.Drawing.Point(111, 88);
-            this.texttele.Name = "texttele";
-            this.texttele.Size = new System.Drawing.Size(100, 26);
-            this.texttele.TabIndex = 32;
+            this.texttelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.texttelefono.Location = new System.Drawing.Point(111, 88);
+            this.texttelefono.Name = "texttelefono";
+            this.texttelefono.Size = new System.Drawing.Size(100, 26);
+            this.texttelefono.TabIndex = 32;
             // 
             // textnombre
             // 
@@ -198,17 +209,6 @@
             this.label3.TabIndex = 31;
             this.label3.Text = "Telefono";
             // 
-            // CLIN
-            // 
-            this.CLIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CLIN.Location = new System.Drawing.Point(45, 145);
-            this.CLIN.Name = "CLIN";
-            this.CLIN.Size = new System.Drawing.Size(150, 35);
-            this.CLIN.TabIndex = 30;
-            this.CLIN.Text = "Nuevo cliente";
-            this.CLIN.UseVisualStyleBackColor = true;
-            this.CLIN.Click += new System.EventHandler(this.CLIN_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -264,7 +264,7 @@
         private System.Windows.Forms.TextBox textraza;
         private System.Windows.Forms.TextBox textnombre2;
         private System.Windows.Forms.TextBox textdueño;
-        private System.Windows.Forms.TextBox texttele;
+        private System.Windows.Forms.TextBox texttelefono;
         private System.Windows.Forms.TextBox textnombre;
         private System.Windows.Forms.TextBox textdni;
         private System.Windows.Forms.Label label4;
@@ -272,12 +272,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button CLIN;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TextBox textedad;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button CLIN;
     }
 }
 

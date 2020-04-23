@@ -26,6 +26,5 @@ namespace Veterinario
                 MessageBox.Show(conexion.chavalitoNuevo(textuser.Text, textnombre.Text, myHash));
         }
 
-       
     }
 }
