@@ -64,6 +64,47 @@ namespace Veterinario
                 return "F";
             }
         }
+        public String clienteNuevo(string DNI, string Nombre, string Telefono)//no funciona
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("INSERT INTO cliente (id, DNI, Nombre, Telefono) VALUES(NULL, @DNI, @Nombre, @Telefono)", conexion);
+                consulta.Parameters.AddWithValue("@DNI", DNI);
+                consulta.Parameters.AddWithValue("@Nombre", Nombre);
+                consulta.Parameters.AddWithValue("@Telefono", Telefono);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return "Añadido correctamente";
+            }
+            catch (MySqlException e)
+            {
+                return "F";
+            }
+        }
+        public String mascotaNuevo(string Dueño, string Raza, string Nombre, string Edad)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("INSERT INTO mascota (Dueño, Raza, Nombre, Edad) VALUES( @Dueño, @Raza, @Nombre, @Edad)", conexion);
+                consulta.Parameters.AddWithValue("@Dueño", Dueño);
+                consulta.Parameters.AddWithValue("@Raza", Raza);
+                consulta.Parameters.AddWithValue("@Nombre", Nombre);
+                consulta.Parameters.AddWithValue("@Edad", Edad);
+
+                consulta.ExecuteNonQuery();
+
+                conexion.Close();
+                return "Añadido correctamente";
+            }
+            catch (MySqlException e)
+            {
+                return "F";
+            }
+        }
     }
 }
 

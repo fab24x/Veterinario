@@ -23,14 +23,11 @@ namespace Veterinario
             if (conexion.logear(textuser.Text, textpass.Text))
             {
                 VentanaPrincipal v = new VentanaPrincipal();
-                MessageBox.Show("Todo bien y yo que me alegro");
                 v.Show();
-                
-                
             }
             else
             {
-                MessageBox.Show("No me la cuelas puerco");
+                MessageBox.Show("Usario incorrecto");
             }
         }
 
