@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
@@ -89,8 +90,8 @@ namespace Veterinario
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("INSERT INTO mascota (Dueño, Raza, Nombre, Edad) VALUES( @Dueño, @Raza, @Nombre, @Edad)", conexion);
-                consulta.Parameters.AddWithValue("@Dueño", Dueño);
+                MySqlCommand consulta = new MySqlCommand("INSERT INTO mascota (DNI, Raza, Nombre, Edad) VALUES( @DNI, @Raza, @Nombre, @Edad)", conexion);
+                consulta.Parameters.AddWithValue("@DNI", Dueño);
                 consulta.Parameters.AddWithValue("@Raza", Raza);
                 consulta.Parameters.AddWithValue("@Nombre", Nombre);
                 consulta.Parameters.AddWithValue("@Edad", Edad);
@@ -103,6 +104,23 @@ namespace Veterinario
             catch (MySqlException e)
             {
                 return "F";
+            }
+        }
+        public DataTable getMas()
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM mascota ", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+                return mascotas;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
             }
         }
     }

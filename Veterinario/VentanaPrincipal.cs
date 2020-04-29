@@ -17,14 +17,18 @@ namespace Veterinario
         public VentanaPrincipal()
         {
             InitializeComponent();
+            dataGridView1.DataSource = conexion.getMas();
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None;
         }
 
 
         private void PET_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(conexion.mascotaNuevo(textdueño.Text, textraza.Text, textnombre2.Text, textedad.Text));
+            MessageBox.Show(conexion.mascotaNuevo(textdni.Text, textraza.Text, textnombre2.Text, textedad.Text));
             
         }
+
 
         private void CLIN_Click_1(object sender, EventArgs e)
         {
