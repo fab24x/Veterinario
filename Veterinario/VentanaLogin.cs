@@ -23,9 +23,9 @@ namespace Veterinario
             if (conexion.logear(textuser.Text, textpass.Text))
             {
                 VentanaPrincipal v = new VentanaPrincipal();
-                VentanaLogin l = new VentanaLogin();
                 v.Show();
-                l.Close();
+                this.Hide();
+
             }
             else
             {

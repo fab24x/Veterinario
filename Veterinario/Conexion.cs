@@ -31,7 +31,7 @@ namespace Veterinario
                 {
                     string passConHash = resultado.GetString("pass");
                     if (BCrypt.Net.BCrypt.Verify(pass, passConHash))
-                    {
+                   {
                         return true;
                     }
                     
@@ -65,15 +65,17 @@ namespace Veterinario
                 return "F";
             }
         }
-        public String clienteNuevo(string DNI, string Nombre, string Telefono)//funciona
+        public String clientNuevo(string DNI, string Nombre, string Telefono, string Email)//el codigo esta bien solo que no funciona
+            //por errores en la base de datos
         {
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("INSERT INTO cliente (id, DNI, Nombre, Telefono) VALUES(NULL, @DNI, @Nombre, @Telefono)", conexion);
+                MySqlCommand consulta = new MySqlCommand("INSERT INTO client (id, DNI, Nombre, Telefono, Email) VALUES(NULL, @DNI, @Nombre, @Telefono, @Email)", conexion);
                 consulta.Parameters.AddWithValue("@DNI", DNI);
                 consulta.Parameters.AddWithValue("@Nombre", Nombre);
                 consulta.Parameters.AddWithValue("@Telefono", Telefono);
+                consulta.Parameters.AddWithValue("@Email", Email);
 
                 consulta.ExecuteNonQuery();
 
@@ -106,6 +108,23 @@ namespace Veterinario
                 return "F";
             }
         }
+        public DataTable getDNI(String DNI)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM client where DNI = '" + DNI + "'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable cliente = new DataTable();
+                cliente.Load(resultado);
+                conexion.Close();
+                return cliente;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
         public DataTable getMas()
         {
             try
@@ -113,10 +132,10 @@ namespace Veterinario
                 conexion.Open();
                 MySqlCommand consulta = new MySqlCommand("SELECT * FROM mascota ", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
-                DataTable mascotas = new DataTable();
-                mascotas.Load(resultado);
+                DataTable mascota = new DataTable();
+                mascota.Load(resultado);
                 conexion.Close();
-                return mascotas;
+                return mascota;
             }
             catch (MySqlException e)
             {
